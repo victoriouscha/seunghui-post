@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="차승희 후보 상세 소개 - 공약, 이력, 언론활동">
+    <title>차승희 후보 상세 소개 | 서울 동대문구</title>
+    <style>
+        /* 기본 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 상단 헤더 - 후보 정보 + 돌아가기 버튼 */
+        .header {
+            background: linear-gradient(135deg, #2d7a3e 0%, #4caf50 100%);
+            color: white;
+            padding: 24px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 768px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-info h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .header-info .region {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 2px;
+        }
+
+        .header-info .slogan {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        .btn-back {
+            background: white;
+            color: #2d7a3e;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: opacity 0.2s;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-back:active {
+            opacity: 0.8;
+        }
+
+        /* 메인 컨테이너 */
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 20px 16px 40px;
+        }
+
+        /* 섹션 공통 스타일 */
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2d7a3e;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        /* 섹션 1: 공약 카드 */
+        .promise-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .promise-card {
+            background: linear-gradient(135deg, #f1f8f4 0%, #fff9c4 100%);
+            border-left: 4px solid #2d7a3e;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .promise-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #2d7a3e;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .promise-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: #2d7a3e;
+            color: white;
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .promise-card p {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* 섹션 2: 이력 */
+        .career-intro {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .career-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .career-tag {
+            background: #e8f5e9;
+            color: #2d7a3e;
+            padding: 8px 14px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* 섹션 3: 언론·활동 리스트 */
+        .activity-list {
+            list-style: none;
+        }
+
+        .activity-item {
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 3px solid #4caf50;
+        }
+
+        .activity-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .activity-item h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 6px;
+        }
+
+        .activity-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* 섹션 4: SNS 버튼 */
+        .sns-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sns-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sns-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .sns-btn.youtube {
+            background: #FF0000;
+            color: white;
+        }
+
+        .sns-btn.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        .sns-btn.facebook {
+            background: #1877f2;
+            color: white;
+        }
+
+        .sns-icon {
+            font-size: 24px;
+        }
+
+        /* 하단 CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #2d7a3e 0%, #4caf50 100%);
+            color: white;
+            text-align: center;
+            padding: 32px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(45, 122, 62, 0.3);
+        }
+
+        .cta-section h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .cta-section p {
+            font-size: 15px;
+            opacity: 0.95;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .cta-email {
+            display: inline-block;
+            background: white;
+            color: #2d7a3e;
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .cta-email:active {
+            opacity: 0.8;
+        }
+
+        /* 반응형 - 작은 화면 */
+        @media (max-width: 400px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .btn-back {
+                align-self: stretch;
+                text-align: center;
+            }
+        }
+
+        /* 부드러운 스크롤 */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- 상단 헤더: 후보 정보 + 돌아가기 버튼 -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-info">
+                <h1>차승희</h1>
+                <p class="region">서울 동대문구</p>
+                <p class="slogan">복잡한 행정을, 주민에게 쉬운 말로</p>
+            </div>
+            <a href="index.html" class="btn-back">← 명함으로</a>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 -->
+    <main class="container">
+        <!-- 섹션 1: 핵심 공약 -->
+        <section class="section" id="promises">
+            <h2 class="section-title">핵심 공약</h2>
+            <div class="promise-cards">
+                <div class="promise-card">
+                    <h3>
+                        <span class="promise-number">1</span>
+                        주민 소통 플랫폼 구축
+                    </h3>
+                    <p>
+                        구정 앱/웹으로 민원·생활정보·참여를 한 곳에서 처리할 수 있도록 통합합니다. 
+                        주민이 언제 어디서나 쉽게 정책에 참여하고 목소리를 낼 수 있는 환경을 만들겠습니다.
+                    </p>
+                </div>
+
+                <div class="promise-card">
+                    <h3>
+                        <span class="promise-number">2</span>
+                        생활 SOC 확충
+                    </h3>
+                    <p>
+                        동네 10분 생활권에 공원·도서관·체육시설을 확충합니다. 
+                        모든 주민이 가까운 곳에서 문화와 여가를 누릴 수 있도록 생활 인프라를 확대하겠습니다.
+                    </p>
+                </div>
+
+                <div class="promise-card">
+                    <h3>
+                        <span class="promise-number">3</span>
+                        청년·육아 지원 강화
+                    </h3>
+                    <p>
+                        돌봄/주거/일자리 연계 프로그램을 확대합니다. 
+                        청년과 육아 가구가 안정적으로 생활하고 미래를 준비할 수 있도록 촘촘히 지원하겠습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2: 이력 -->
+        <section class="section" id="career">
+            <h2 class="section-title">이력</h2>
+            <div class="career-intro">
+                AI·디지털 교육 전문가로 대학과 공공기관에서 강의하고 있으며, 
+                생성형AI 교육지도사 및 AI선거전략연구소 연구위원으로 활동하고 있습니다. 
+                지역 현장에서 15년간 주민과 함께 정책을 만들어왔으며, 
+                디지털 행정 혁신과 주민 중심 정책 실현에 전념해왔습니다.
+            </div>
+            <div class="career-tags">
+                <span class="career-tag">생성형AI교육지도사</span>
+                <span class="career-tag">AI선거전략연구소 연구위원</span>
+                <span class="career-tag">영남대학교 겸임교수</span>
+                <span class="career-tag">국방부 안보전담 강사</span>
+                <span class="career-tag">한국기술교육대 AI강사</span>
+                <span class="career-tag">한국AI영상제작협회 부회장</span>
+                <span class="career-tag">한국AI리터러시강사협회 부회장</span>
+                <span class="career-tag">디지털융합교육원 강사</span>
+            </div>
+        </section>
+
+        <!-- 섹션 3: 언론·활동 -->
+        <section class="section" id="media">
+            <h2 class="section-title">언론·활동</h2>
+            <ul class="activity-list">
+                <li class="activity-item">
+                    <h4>AI 교육·디지털 행정 관련 강연 및 자문 다수</h4>
+                    <p>
+                        공공기관, 대학, 기업에서 생성형AI와 디지털 전환에 관한 강연 및 정책 자문을 진행하며, 
+                        지역 행정의 디지털 혁신 방안을 제시하고 있습니다.
+                    </p>
+                </li>
+                <li class="activity-item">
+                    <h4>지역 현장 간담회 및 정책 제안 활동</h4>
+                    <p>
+                        동대문구 주민과 정기적인 현장 간담회를 통해 생활 불편 사항을 청취하고, 
+                        구체적인 정책 제안으로 연결하는 주민 참여형 활동을 지속하고 있습니다.
+                    </p>
+                </li>
+                <li class="activity-item">
+                    <h4>주요 언론 보도 및 인터뷰 진행</h4>
+                    <p>
+                        일간지, 방송, 온라인 매체를 통해 지역 정책, AI 교육, 디지털 행정 혁신에 관한 
+                        인터뷰와 칼럼을 발표하며 정책 비전을 공유하고 있습니다.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 섹션 4: SNS -->
+        <section class="section" id="sns">
+            <h2 class="section-title">SNS 채널</h2>
+            <div class="sns-buttons">
+                <a href="https://buly.kr/8IxJsWW" class="sns-btn youtube" target="_blank" rel="noopener">
+                    <span class="sns-icon">▶</span>
+                    <span>유튜브에서 만나기</span>
+                </a>
+                <a href="https://www.instagram.com/seunghuigeo/" class="sns-btn instagram" target="_blank" rel="noopener">
+                    <span class="sns-icon">📷</span>
+                    <span>인스타그램 팔로우</span>
+                </a>
+                <a href="https://tinyurl.com/22jk8o7j" class="sns-btn facebook" target="_blank" rel="noopener">
+                    <span class="sns-icon">f</span>
+                    <span>페이스북 페이지</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 하단 CTA: 문의/제안 -->
+        <section class="cta-section">
+            <h3>정책 제안을 보내주세요</h3>
+            <p>
+                여러분의 소중한 의견과 제안이<br>
+                더 나은 동대문구를 만드는 힘이 됩니다.
+            </p>
+            <a href="mailto:contact@example.com" class="cta-email">
+                📧 이메일 보내기
+            </a>
+        </section>
+    </main>
+
+    <script>
+        // 부드러운 스크롤 동작 확인 (HTML scroll-behavior: smooth 사용)
+        // 추가 스크립트 기능이 필요하면 여기에 작성
+
+        // 예시: 페이지 로드 시 특정 섹션으로 자동 스크롤 (URL hash 기반)
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash;
+            if (hash) {
+                const target = document.querySelector(hash);
+                if (target) {
+                    setTimeout(() => {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+            }
+        });
+
+        // 이메일 링크 보호 (스팸 방지)
+        const emailLink = document.querySelector('.cta-email');
+        if (emailLink) {
+            emailLink.addEventListener('click', function(e) {
+                // 실제 이메일 주소로 교체 필요
+                // 예: this.href = 'mailto:' + 'contact' + '@' + 'example.com';
+            });
+        }
+    </script>
+</body>
+</html>
